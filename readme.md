@@ -15,6 +15,7 @@ Internally, managed identities are service principals of a special type, which a
 
 It is also possible to create a **user-assigned MI** as a standalone azure resource. After the identity is created, the identity can be assigned to one or more Azure service instances. The lifecycle of a user-assigned identity is managed separately from the lifecycle of the Azure service instances to which it's assigned. RBACs are used to grant access to a resource & this has to be done explicitly for the user-assigned identity.
 
+### Managed Identity in action
 To see a Managed Identity in action with Azure WebApp (PaaS Service) & Azure Key Vault, refer this [link](https://github.com/abhinabsarkar/webapp-mi-keyvault)
 
 ## AAD Pod Identities
@@ -35,6 +36,7 @@ In the above example, a developer creates a pod that uses a managed identity to 
 3. A developer deploys a pod with a managed identity that requests an access token through the NMI server.
 4. The token is returned to the pod and used to access an Azure SQL Server instance.
 
+### Pod Identity in action
 To see a Pod Identity in action with AKS & Azure Key Vault, refer this [link](https://github.com/abhinabsarkar/podidentity)
 
 ## Basic example of Managed Identity (Not Pod Identity) with AKS
