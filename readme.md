@@ -101,9 +101,9 @@ az identity show --resource-group MC_rg-aks-demo_aks-abs-demo_eastus --name aks-
 # Create a container registry
 az acr create --resource-group rg-aks-demo --name acrabsdemo --sku Basic
 # Get the resource id of the acr registry
-$resourceID=(az acr show --resource-group rg-aks-demo --name acrabsdemo --query id --output tsv)
+resourceID=$(az acr show --resource-group rg-aks-demo --name acrabsdemo --query id --output tsv)
 # Get principal ID of the user-assigned identity
-$spID=(az identity show --resource-group MC_rg-aks-demo_aks-abs-demo_eastus --name aks-abs-demo-agentpool --query principalId --output tsv)
+spID=$(az identity show --resource-group MC_rg-aks-demo_aks-abs-demo_eastus --name aks-abs-demo-agentpool --query principalId --output tsv)
 # Assign the role say 'acrpull' to the managed identity 'aks-abs-demo-agentpool' on the acr registry 'acrabsdemo'
 az role assignment create --assignee $spID --scope $resourceID --role acrpull
 # Similarly, the AcrImageSigner role can be assigned to the managed identity
